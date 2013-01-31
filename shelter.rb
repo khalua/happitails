@@ -1,7 +1,7 @@
 class Shelter
   attr_accessor :name, :animals, :clients
-  def initialize
-    @name = Happitails
+  def initialize(name)
+    @name = name
     @animals = {}
     @clients = {}
   end
