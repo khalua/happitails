@@ -1,3 +1,6 @@
+require 'pry' #remove for prod.
+require_relative 'shelter' #remove_for_prod
+
 class Animal
   attr_accessor :name, :owner, :type, :breed, :age, :gender, :favorite_toys
   def initialize(name, type, breed, age, gender)
@@ -20,3 +23,5 @@ class Animal
 
 
 end
+
+binding.pry
