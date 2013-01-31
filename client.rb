@@ -15,3 +15,4 @@ class Client
   def to_s
     "client #{name} is a #{age} old #{gender} and has #{kids} spawnlings and #{pets} animals "
   end
+end
