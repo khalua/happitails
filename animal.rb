@@ -1,6 +1,6 @@
 class Animal
   attr_accessor :name, :owner, :type, :breed, :age, :gender, :favorite_toys
-  def initialize(name, owner, type, breed, age, gender, favorite_toys)
+  def initialize(name, type, breed, age, gender)
     @name = name
     @owner = nil
     @type = type
