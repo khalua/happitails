@@ -5,7 +5,7 @@ class Client
     @age = age
     @gender = gender
     @kids = kids
-    @num_pets = nil
+    @num_pets = num_pets
   end
 
 
