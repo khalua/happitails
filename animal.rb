@@ -14,11 +14,7 @@ class Animal
     @owner = owner_name
   end
 
-
-
   def to_s
     puts "#{name} is a #{@species}, breed: #{@breed}"
   end
-
-
 end
