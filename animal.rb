@@ -17,7 +17,7 @@ class Animal
 
 
   def to_s
-    "#{name} is a #{@species}, breed: #{@breed}"
+    puts "#{name} is a #{@species}, breed: #{@breed}"
   end
 
 
