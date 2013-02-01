@@ -10,13 +10,11 @@ class Animal
     @favorite_toys = []
   end
 
-  def is_adopted?
-    !!@owner
-  end
-
   def add_owner(owner_name)
     @owner = owner_name
   end
+
+
 
   def to_s
     "#{name} is a #{@species}, breed: #{@breed}"

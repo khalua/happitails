@@ -21,12 +21,12 @@ require_relative 'shelter'
 #  when 'a'
 
 shelter = Shelter.new('happitails')
-shelter.animals["Buddy"] = Animal.new("Buddy", "Dog", "Lab", 12, "male")
-shelter.animals["Joe"] = Animal.new("Joe", "Cat", "Tabby", 2, "female")
+shelter.animals["Buddy"] = Animal.new("Buddy","Dog", "Lab", 12, "male")
+shelter.animals["Joe"] = Animal.new("Joe","Cat", "Tabby", 2, "female")
 
 
     puts "You are in the Adoption Menu."
-    print "Animal (i)n, (o)ut or (q)uit "
+    print "Animal (i)n, (o)ut, (l)ist, or(q)uit "
     adopt_choice = gets.chomp.downcase
     while adopt_choice != 'q'
       case adopt_choice
@@ -42,20 +42,21 @@ shelter.animals["Joe"] = Animal.new("Joe", "Cat", "Tabby", 2, "female")
         print "Gender (m/f): "
         gender = gets.chomp.downcase
         shelter.animals[name] = Animal.new(name, species, breed, age, gender)
-
       when 'o'
         puts "These are the animals that up for adoption: "
-        puts shelter.animals.keys.join(', ')
+        puts shelter.animals.keys
         print "What's the name of the animal being adopted? "
         animal_name_out = gets.chomp
         print "What's the name of the new owner? "
         new_owner = gets.chomp.capitalize
         shelter.animals[animal_name_out].add_owner(new_owner)
-        binding.pry
+      when 'l'
+        ""
+        puts shelter.animals
       end
 
-      print "Animal (i)n, (o)ut or (q)uit "
-      adopt_choice = gets.chomp.downcase      #print "Animal (i)n, (o)ut or (q)uit "
-    end
+      print "Animal (i)n, (o)ut, (l)ist or (q)uit "
+      adopt_choice = gets.chomp.downcase
+     end
 
 binding.pry
