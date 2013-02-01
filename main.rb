@@ -9,21 +9,25 @@ client = nil
 
 def menu
   puts `clear`
-  puts "Welcome to the Happitails Database\n\n".color(:red)
+  puts "Welcome to the Happitails Database\n\n".color(:blue)
   print 'Choose: (L)ists, (A)doption, (C)lient Management or (Q)uit. '
 end
-response = menu
-response = gets.chomp.downcase
+menu
 stay = true
 while stay
+  response = gets.chomp.downcase
   case response
   when 'l'
     print 'Choose: (A)nimal List or (C)lient List.'
     reply = gets.chomp.downcase
     if reply == 'a'
-      puts shelter.animals
+      puts shelter.animals.to_s
+      gets
+      menu
     else reply == 'c'
-      puts shelter.clients
+      puts shelter.clients.to_s
+      gets
+      menu
     end
   when 'a'
   when 'c'
@@ -42,10 +46,14 @@ while stay
       num_pets = gets.to_i
       client = Client.new(name, age, gender, num_kids, num_pets)
       shelter.clients[name]=client
+      puts 'Client has been added! Press return to continue.'.color(:yellow)
+      gets
+      menu
     else
-
+      menu
     end
   when 'q'
+    puts 'Quit application.'.color(:red)
     stay = false
   end
 end

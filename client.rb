@@ -13,6 +13,6 @@ class Client
 
 
   def to_s
-    "client #{name} is a #{age} old #{gender} and has #{kids} spawnlings and #{pets} animals "
+    "client #{name} is a #{age} year-old #{gender} and has #{kids} spawnlings and #{num_pets} animals "
   end
 end
