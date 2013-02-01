@@ -8,11 +8,7 @@ class Client
     @num_pets = num_pets
   end
 
-
-
-
-
   def to_s
-    "client #{name} is a #{age} year-old #{gender} and has #{kids} spawnlings and #{num_pets} animals "
+    puts "#{name.capitalize} is a #{age} year-old #{gender} who has #{kids} child(ren) and #{num_pets} animal(s)."
   end
 end

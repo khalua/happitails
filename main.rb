@@ -89,7 +89,7 @@ while response != 'q'
       print 'Name: '
       name = gets.chomp
       print 'Age: '
-      age = gets.chomp
+      age = gets.to_i
       print 'Gender: '
       gender = gets.chomp
       print 'Number of children: '
