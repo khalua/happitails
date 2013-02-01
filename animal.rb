@@ -1,21 +1,23 @@
 class Animal
-  attr_accessor :name, :owner, :type, :breed, :age, :gender, :favorite_toys
-  def initialize(name, type, breed, age, gender)
+  attr_accessor :name, :owner, :species, :breed, :age, :gender, :favorite_toys
+  def initialize(name, species, breed, age, gender)
     @name = name
     @owner = nil
-    @type = type
+    @species = species
     @breed = breed
     @age = age
     @gender = gender
     @favorite_toys = []
   end
 
-  def is_adopted?
-    @owner.nil?
+  def add_owner(owner_name)
+    @owner = owner_name
   end
 
+
+
   def to_s
-    "#{name} is a #{@type}, breed: #{@breed}"
+    "#{name} is a #{@species}, breed: #{@breed}"
   end
 
 
