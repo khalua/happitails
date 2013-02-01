@@ -9,7 +9,7 @@ class Client
   end
 
   def add_animal(num)
-    @num_pets + @num_pets + 1
+    @num_pets = @num_pets + 1
   end
 
   def to_s

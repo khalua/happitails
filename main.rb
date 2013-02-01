@@ -63,8 +63,6 @@ while response != 'q'
         puts shelter.clients.keys
         new_owner = gets.chomp.capitalize
         shelter.animals[animal_name_out].add_owner(new_owner)
-        binding.pry
-
         shelter.clients[new_owner].add_animal(1)
         puts "Animal adopted"
         binding.pry
