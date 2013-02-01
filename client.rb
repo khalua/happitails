@@ -8,6 +8,10 @@ class Client
     @num_pets = num_pets
   end
 
+  def add_animal(num)
+    @num_pets + @num_pets + 1
+  end
+
   def to_s
     puts "#{name.capitalize} is a #{age} year-old #{gender} who has #{kids} child(ren) and #{num_pets} animal(s)."
   end

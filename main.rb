@@ -4,26 +4,11 @@ require_relative 'animal'
 require_relative 'client'
 require_relative 'shelter'
 
-# puts `clear`
-# puts "Welcome to the Happitails Database\n\n".color(:red)
-# print 'Choose: (L)ists, (A)doption, or (Q)uit. '
-# response = gets.chomp.downcase
-# while response != 'q'
-#   case response
-#   when 'l'
-#     print 'Choose: (A)nimal List or (C)lient List.'
-#     reply = gets.chomp.downcase
-#     if reply == 'a'
-#       puts shelter.animals
-#     else
-#       puts
-#     end
-#  when 'a'
+
 
 shelter = Shelter.new('happitails')
 client = nil
-#shelter.animals["Buddy"] = Animal.new("Buddy","Dog", "Lab", 12, "male")
-#shelter.animals["Joe"] = Animal.new("Joe","Cat", "Tabby", 2, "female")
+
 
 
 
@@ -73,21 +58,29 @@ while response != 'q'
         puts shelter.animals.keys
         print "What's the name of the animal being adopted? "
         animal_name_out = gets.chomp
-        print "What's the name of the new owner? "
+        puts "Which client wants the dog? the name of the new owner? "
+        puts "(Make sure client record already created)"
+        puts shelter.clients.keys
         new_owner = gets.chomp.capitalize
         shelter.animals[animal_name_out].add_owner(new_owner)
+        binding.pry
+
+        shelter.clients[new_owner].add_animal(1)
         puts "Animal adopted"
+        binding.pry
+
       end
 
       print "Animal (i)n, (o)ut or (q)uit "
       adopt_choice = gets.chomp.downcase
+
      end
   when 'c'
     print "Would you like to add a client? (Y)es (N)o "
     answer = gets.chomp.downcase
     if answer == 'y'
       print 'Name: '
-      name = gets.chomp
+      name = gets.chomp.capitalize
       print 'Age: '
       age = gets.to_i
       print 'Gender: '
