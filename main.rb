@@ -30,12 +30,12 @@ client = nil
 def menu
   puts `clear`
   puts "Welcome to the Happitails Database\n\n".color(:blue)
-  print 'Choose: (L)ists, (A)doption, (C)lient Management or (Q)uit. '
+  print 'Choose: (L)ists, (A)nimal Management, (C)lient Management or (Q)uit. '
+  gets.chomp.downcase
 end
-menu
-stay = true
-while stay
-  response = gets.chomp.downcase
+
+response = menu
+while response != 'q'
   case response
   when 'l'
     print 'Choose: (A)nimal List or (C)lient List.'
@@ -50,8 +50,8 @@ while stay
       menu
     end
   when 'a'
-    puts "You are in the Adoption Menu."
-    print "Animal (i)n, (o)ut or(q)uit "
+    puts "You are in the Animal Management / Adoption Menu."
+    print "Animal (i)n, (o)ut or (q)uit "
     adopt_choice = gets.chomp.downcase
     while adopt_choice != 'q'
       case adopt_choice
@@ -81,7 +81,6 @@ while stay
 
       print "Animal (i)n, (o)ut or (q)uit "
       adopt_choice = gets.chomp.downcase
-      binding.pry
      end
   when 'c'
     print "Would you like to add a client? (Y)es (N)o "
@@ -107,6 +106,6 @@ while stay
     end
   when 'q'
     puts 'Quit application.'.color(:red)
-    stay = false
   end
+  response = menu
 end
