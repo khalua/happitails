@@ -29,7 +29,7 @@ client = nil
 
 def menu
   puts `clear`
-  puts "Welcome to the Happitails Database\n\n".color(:blue)
+  puts Rainbow("Welcome to the Happitails Database\n\n").blue
   print 'Choose: (L)ists, (A)nimal Management, (C)lient Management or (Q)uit. '
   gets.chomp.downcase
 end
@@ -98,14 +98,14 @@ while response != 'q'
       num_pets = gets.to_i
       client = Client.new(name, age, gender, num_kids, num_pets)
       shelter.clients[name]=client
-      puts 'Client has been added! Press return to continue.'.color(:yellow)
+      puts Rainbow('Client has been added! Press return to continue.').yellow
       gets
       menu
     else
       menu
     end
   when 'q'
-    puts 'Quit application.'.color(:red)
+    puts Rainbow('Quit application.').red
   end
   response = menu
 end
